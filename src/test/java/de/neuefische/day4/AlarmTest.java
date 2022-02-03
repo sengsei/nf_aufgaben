@@ -1,6 +1,6 @@
 package de.neuefische.day4;
 
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,6 +30,19 @@ class AlarmTest {
 
         // when
         assertEquals("Maximale Personenzahl nicht überschritten", result );
+
+    }
+
+    @Test
+    void shouldAlarmIfPersonEquals30() {
+        // given
+        int value = 30;
+
+        // then
+        String result = Alarm.alarmAusgabe(value);
+
+        // when
+        assertEquals("30 ist keine gültige Eingabe", result );
 
     }
 }
