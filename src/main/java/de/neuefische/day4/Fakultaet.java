@@ -32,4 +32,13 @@ public class Fakultaet {
         return fac;
     }
 
+    public static int calcfacWithRecursion(int number) {
+
+        if (number == 0) {
+            return 1;
+        }
+
+        return number * calcfacWithRecursion(number - 1);
+    }
+
 }

@@ -77,4 +77,40 @@ class FakultaetTest {
         // then
         assertEquals(720, result);
     }
+
+    @Test
+    void calcfacwith0Recursion() {
+        // given
+        int number = 0;
+
+        // when
+        int result = Fakultaet.calcfacWithRecursion(number);
+
+        // then
+        assertEquals(1, result);
+    }
+
+    @Test
+    void calcfacwith1Recursion() {
+        // given
+        int number = 1;
+
+        // when
+        int result = Fakultaet.calcfacWithRecursion(number);
+
+        // then
+        assertEquals(1, result);
+    }
+
+    @Test
+    void calcfacwith6Recursion() {
+        // given
+        int number = 6;
+
+        // when
+        int result = Fakultaet.calcfacWithRecursion(number);
+
+        // then
+        assertEquals(720, result);
+    }
 }
