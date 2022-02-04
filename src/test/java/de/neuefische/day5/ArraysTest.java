@@ -9,11 +9,10 @@ class ArraysTest {
     @Test
     void shouldBeStudent2() {
         // given
-        String[] student = new String[10];
-        student[2] = "Student <2>";
+        int number = 10;
 
         // when
-        String[] resultArray = Arrays.fillStudentArray(student);
+        String[] resultArray = Arrays.fillStudentArray(number);
         String result = resultArray[2];
 
         // then
