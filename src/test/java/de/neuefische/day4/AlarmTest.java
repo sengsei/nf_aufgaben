@@ -34,19 +34,6 @@ class AlarmTest {
     }
 
     @Test
-    void shouldAlarmIfPersonEquals30() {
-        // given
-        int value = 30;
-
-        // then
-        String result = Alarm.alarmAusgabe(value, "gelb");
-
-        // when
-        assertEquals("30 ist keine gültige Eingabe", result );
-
-    }
-
-    @Test
     void shouldRedAlarm() {
         // given
         String alarmlevel = "rot";

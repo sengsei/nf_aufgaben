@@ -6,23 +6,23 @@ public class Alarm {
 
         switch (alarmlevel) {
             case "gelb":
-                if (value > 30) {
-                    return "Zu viele Personen";
-                } else {
-                    return "Maximale Personenzahl nicht überschritten";
-                }
+                return getPersonCheck(value, 30);
             case "grün":
-                if (value > 60) {
-                    return "Zu viele Personen";
-                } else {
-                    return "Maximale Personenzahl nicht überschritten";
-                }
+                return getPersonCheck(value, 60);
             case "rot":
                 return "keine Personen erlaubt";
             default:
                 return "Gefahrenlevel unbekannt!";
         }
 
+    }
+
+    private static String getPersonCheck(int value, int x) {
+        if (value > x) {
+            return "Zu viele Personen";
+        } else {
+            return "Maximale Personenzahl nicht überschritten";
+        }
     }
 
 }
