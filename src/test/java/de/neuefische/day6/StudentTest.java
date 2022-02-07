@@ -1,5 +1,6 @@
 package de.neuefische.day6;
 
+import de.neuefische.day6.model.Student;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -86,5 +87,15 @@ class StudentTest {
         student.setEnrolled(false);
         //then
         assertFalse(student.isEnrolled());
+    }
+
+    @Test
+    void useConstructorWithtoStringTest() {
+        //given
+        Student student = new Student("Klaus", "Meier", "123456", true);
+        //when
+        String result = student.toString();
+        //then
+        assertEquals("Student{firstname='Klaus', lastname='Meier', matNr='123456', enrolled=true}", result);
     }
 }
