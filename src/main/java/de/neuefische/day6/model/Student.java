@@ -1,5 +1,7 @@
 package de.neuefische.day6.model;
 
+import java.util.Objects;
+
 public class Student {
     private String firstname;
     private String lastname;
@@ -57,5 +59,18 @@ public class Student {
                 ", matNr='" + matNr + '\'' +
                 ", enrolled=" + enrolled +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return enrolled == student.enrolled && Objects.equals(firstname, student.firstname) && Objects.equals(lastname, student.lastname) && Objects.equals(matNr, student.matNr);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname, matNr, enrolled);
     }
 }

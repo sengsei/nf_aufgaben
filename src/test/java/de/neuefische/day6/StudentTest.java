@@ -98,4 +98,15 @@ class StudentTest {
         //then
         assertEquals("Student{firstname='Klaus', lastname='Meier', matNr='123456', enrolled=true}", result);
     }
+
+    @Test
+    void equalsAndHashTest() {
+        Student student1 = new Student("Klaus", "Meier", "123456", true);
+        Student student2 = new Student("Klaus", "Meier", "123456", true);
+
+        assertTrue(student1.equals(student2));
+        assertEquals(student1.hashCode(), student2.hashCode());
+        assertEquals(false, student1 == student2);
+
+    }
 }
