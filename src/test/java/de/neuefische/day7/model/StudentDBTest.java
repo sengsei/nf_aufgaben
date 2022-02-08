@@ -8,8 +8,8 @@ class StudentDBTest {
 
     @Test
     void shouldGetlistOfStudents() {
-        Student s1 = new Student("Klaus", "Meier", 1234);
-        Student s2 = new Student("Alice", "Bob", 12354);
+        Student s1 = new PhysicsStudent("Klaus", "Meier", 1234);
+        PhysicsStudent s2 = new PhysicsStudent("Alice", "Bob", 12354);
         Student[] students = {s1, s2};
         StudentDB studentDB = new StudentDB(students);
 
@@ -18,8 +18,8 @@ class StudentDBTest {
 
     @Test
     void shouldReturnFormatedStringOfStudents() {
-        Student s1 = new Student("Klaus", "Meier", 1234);
-        Student[] students = {s1};
+        PhysicsStudent s1 = new PhysicsStudent("Klaus", "Meier", 1234);
+        PhysicsStudent[] students = {s1};
         StudentDB studentDB = new StudentDB(students);
 
         assertEquals("[Student{firstname='Klaus', lastname='Meier', id=1234}]", studentDB.toString());
@@ -27,18 +27,18 @@ class StudentDBTest {
 
     @Test
     void showRandomStudents() {
-        Student s1 = new Student("Klaus", "Meier", 1234);
-        Student s2 = new Student("Alice", "Bob", 1235);
-        Student s3 = new Student("Bob", "Alice", 1236);
-        Student[] students = {s1, s2, s3};
+        PhysicsStudent s1 = new PhysicsStudent("Klaus", "Meier", 1234);
+        PhysicsStudent s2 = new PhysicsStudent("Alice", "Bob", 1235);
+        PhysicsStudent s3 = new PhysicsStudent("Bob", "Alice", 1236);
+        PhysicsStudent[] students = {s1, s2, s3};
         StudentDB studentDB = new StudentDB(students);
         System.out.println(studentDB.randomStudent());
     }
 
     @Test
     void addStudentToArrayTest() {
-        Student s1 = new Student("Alice", "Bob", 1235);
-        Student[] students = new Student[0];
+        PhysicsStudent s1 = new PhysicsStudent("Alice", "Bob", 1235);
+        PhysicsStudent[] students = new PhysicsStudent[0];
         StudentDB studentDB = new StudentDB(students);
         studentDB.add(s1);
 
@@ -47,8 +47,8 @@ class StudentDBTest {
 
     @Test
     void removeStudentToArrayTest() {
-        Student s1 = new Student("Alice", "Bob", 1235);
-        Student[] students = new Student[0];
+        PhysicsStudent s1 = new PhysicsStudent("Alice", "Bob", 1235);
+        PhysicsStudent[] students = new PhysicsStudent[0];
         StudentDB studentDB = new StudentDB(students);
         studentDB.add(s1);
         studentDB.remove(s1);
