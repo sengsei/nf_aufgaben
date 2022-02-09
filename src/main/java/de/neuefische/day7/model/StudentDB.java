@@ -1,47 +1,37 @@
 package de.neuefische.day7.model;
 
-import org.apache.commons.lang3.ArrayUtils;
-
-import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class StudentDB {
-    private Student[] students;
+    private List<Student> students;
 
-    public StudentDB(Student[] students) {
+    public StudentDB(List<Student> students) {
         this.students = students;
     }
 
-    public Student[] list() {
+    public List<Student> list() {
         return students;
     }
 
     @Override
     public String toString() {
-        return Arrays.toString(students);
+        return students.toString();
     }
 
     public Student randomStudent() {
         Student result;
         Random random = new Random();
-        int randomIndex = random.nextInt(students.length);
-        return students[randomIndex];
+        int randomIndex = random.nextInt(students.size());
+        return students.get(randomIndex);
     }
 
     public void add(Student student) {
-        int lengthOfNewStudentArray = students.length + 1;
-        Student[] studentsActual = new Student[lengthOfNewStudentArray];
-        System.arraycopy(students, 0, studentsActual, 0, students.length);
-        studentsActual[students.length] = student;
-        students = studentsActual;
+        students.add(student);
     }
 
     public void remove(Student student) {
-        for (int i = 0; i < students.length; i++){
-            if (students[i].equals(student)) {
-                students = ArrayUtils.remove(students,i );
-                }
-            }
-        }
+        students.remove(student);
     }
+}
 

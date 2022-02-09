@@ -24,6 +24,8 @@ public class AnimalList {
             head = head.getNext();
         }
 
+
+
     }
 
     private AnimalListItem nextElement(AnimalListItem animalListItem){
