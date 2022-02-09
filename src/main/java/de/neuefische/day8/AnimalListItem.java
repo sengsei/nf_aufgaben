@@ -1,5 +1,7 @@
 package de.neuefische.day8;
 
+import java.util.Objects;
+
 public class AnimalListItem {
     private Animal value;
     private AnimalListItem next;
@@ -23,5 +25,9 @@ public class AnimalListItem {
 
     public boolean hasNext(){
         return next != null;
+    }
+
+    public Animal getValue() {
+        return value;
     }
 }

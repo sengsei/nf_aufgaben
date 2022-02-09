@@ -1,5 +1,8 @@
 package de.neuefische.day8;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class AnimalList {
     private AnimalListItem head;
 
@@ -9,6 +12,18 @@ public class AnimalList {
         } else {
             nextElement(head).setNext(new AnimalListItem(animal));
         }
+    }
+
+    //TODO
+    public void remove(Animal animal){
+        if (head == null){
+            return;
+        }
+
+        while(head != null && head.getValue().equals(animal)) {
+            head = head.getNext();
+        }
+
     }
 
     private AnimalListItem nextElement(AnimalListItem animalListItem){
