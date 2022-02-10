@@ -50,7 +50,5 @@ class AnimalListItemTest {
         xs.add(a3);
         xs.add(a4);
 
-        xs.remove(a2);
-
     }
 }
