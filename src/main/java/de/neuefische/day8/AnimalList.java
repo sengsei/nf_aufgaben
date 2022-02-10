@@ -16,12 +16,20 @@ public class AnimalList {
 
     //TODO
     public void remove(Animal animal){
-        if (head == null){
-            return;
+        AnimalListItem current = head;
+        AnimalListItem prev = null;
+
+
+        if (current != null && current.getValue().equals(animal)){
+            current = current.getNext();
         }
 
         while(head != null && head.getValue().equals(animal)) {
             head = head.getNext();
+        }
+
+        if (head == null){
+            return;
         }
 
 

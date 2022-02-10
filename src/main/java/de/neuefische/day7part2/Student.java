@@ -7,4 +7,6 @@ public abstract class Student {
     public abstract void setCourseName(String coursname);
 
     public abstract int anzahlModule();
+
+    public abstract int getId();
 }
