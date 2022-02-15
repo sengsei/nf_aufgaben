@@ -2,14 +2,14 @@ package de.neuefische.day4;
 
 public class Alarm {
 
-    public static String alarmAusgabe(int value, String alarmlevel) {
+    public static String alarmAusgabe(int value, Alarmstufe alarmlevel) {
 
         switch (alarmlevel) {
-            case "gelb":
+            case GELB:
                 return getPersonCheck(value, 30);
-            case "grün":
+            case GRÜN:
                 return getPersonCheck(value, 60);
-            case "rot":
+            case ROT:
                 return "keine Personen erlaubt";
             default:
                 return "Gefahrenlevel unbekannt!";

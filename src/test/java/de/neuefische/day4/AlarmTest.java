@@ -13,7 +13,7 @@ class AlarmTest {
         int value = 31;
 
         // then
-        String result = Alarm.alarmAusgabe(value, "gelb");
+        String result = Alarm.alarmAusgabe(value, Alarmstufe.GELB);
 
         // when
         assertEquals("Zu viele Personen", result );
@@ -26,7 +26,7 @@ class AlarmTest {
         int value = 29;
 
         // then
-        String result = Alarm.alarmAusgabe(value, "gelb");
+        String result = Alarm.alarmAusgabe(value, Alarmstufe.GELB);
 
         // when
         assertEquals("Maximale Personenzahl nicht überschritten", result );
@@ -36,10 +36,10 @@ class AlarmTest {
     @Test
     void shouldRedAlarm() {
         // given
-        String alarmlevel = "rot";
+        Alarmstufe alarmlevel = Alarmstufe.ROT;
 
         // then
-        String result = Alarm.alarmAusgabe(42, "rot");
+        String result = Alarm.alarmAusgabe(42, Alarmstufe.ROT);
 
         // when
         assertEquals("keine Personen erlaubt", result);
@@ -48,10 +48,10 @@ class AlarmTest {
     @Test
     void shouldYelloAlarm() {
         // given
-        String alarmlevel = "gelb";
+        Alarmstufe alarmlevel = Alarmstufe.GELB;
 
         // then
-        String result = Alarm.alarmAusgabe(42, "gelb");
+        String result = Alarm.alarmAusgabe(42, Alarmstufe.GELB);
 
         // when
         assertEquals("Zu viele Personen", result);
